@@ -1,0 +1,4 @@
+mlflow
+
+# Add any other dependencies you need for your LLM evaluation
+psycopg2-binary
