@@ -7,12 +7,15 @@ from litellm import completion
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.tools import ArxivQueryRun
 from dotenv import load_dotenv
-
+from huggingface_hub import login
 # Load environment variables from .env file
 load_dotenv()
 
-# Access the GEMINI_API_KEY
 gemini_api_key = os.getenv("GEMINI_API_KEY")
+huggingface_token = os.getenv("HUGGINGFACE_TOKEN")
+
+if huggingface_token:
+    login(token=huggingface_token)
 
 # Initialize ChromaDB client
 client = chromadb.PersistentClient(path="chroma_db")
