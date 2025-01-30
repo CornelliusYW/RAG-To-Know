@@ -1,3 +1,5 @@
 RAG_Venv
-.ipynb_checkpoints/
+**/.ipynb_checkpoints
 .gitignore
+**/.env
+**/chroma_db

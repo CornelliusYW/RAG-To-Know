@@ -10,14 +10,13 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from langchain_text_splitters import RecursiveCharacterTextSplitter  # For text splitting
 import torch
 
-# Constants
 AUDIO_FILE = "user_input.wav"
-RESPONSE_AUDIO_FILE = "response.wav"  # File to save the generated audio response
-PDF_FILE = "Insurance_Handbook_20103.pdf"  # Replace with your PDF file path
-SAMPLE_RATE = 16000  # Sample rate for audio recording
-WAKE_WORD = "Hi"  # Wake word to activate the system
-SIMILARITY_THRESHOLD = 0.4  # Threshold for wake word detection
-MAX_ATTEMPTS = 5  # Maximum number of attempts to detect the wake word
+RESPONSE_AUDIO_FILE = "response.wav"  
+PDF_FILE = "Insurance_Handbook_20103.pdf"  
+SAMPLE_RATE = 16000 
+WAKE_WORD = "Hi"  
+SIMILARITY_THRESHOLD = 0.4  
+MAX_ATTEMPTS = 5  
 
 # Step 1: Speech-to-Text (STT) using Whisper
 def record_audio(filename, duration=5, samplerate=SAMPLE_RATE):
